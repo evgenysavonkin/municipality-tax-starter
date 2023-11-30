@@ -1,3 +1,13 @@
 package com.testapp.municipalitytax.web.payload;
 
-public record UpdateTaxRequest(Double tax, String startDate, String schedule) {}
+import java.nio.charset.StandardCharsets;
+import java.util.UUID;
+
+public record UpdateTaxRequest(Double tax, String startDate, String schedule) implements UUIDGeneratable {
+    @Override
+    public UUID generateUUID() {
+        String combinedValues = tax + startDate + schedule;
+        byte[] bytes = combinedValues.getBytes(StandardCharsets.UTF_8);
+        return UUID.nameUUIDFromBytes(bytes);
+    }
+}

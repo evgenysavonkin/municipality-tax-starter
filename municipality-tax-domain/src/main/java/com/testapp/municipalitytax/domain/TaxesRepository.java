@@ -1,7 +1,10 @@
 package com.testapp.municipalitytax.domain;
 
+import org.springframework.stereotype.Repository;
+
 import java.time.LocalDate;
 import java.util.List;
+
 
 public interface TaxesRepository {
 

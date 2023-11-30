@@ -9,4 +9,5 @@ public class TaxEntity {
       UUID id, String municipality, Double tax, LocalDate startDate, LocalDate endDate) {}
 
   public TaxEntity(TaxEntity taxEntity, String municipality) {}
+
 }
